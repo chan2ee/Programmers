@@ -1,0 +1,27 @@
+#include <string>
+#include <vector>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string solution(vector<int> food) {
+    string answer = "";
+    vector<int> count;
+    
+    for(int i = 1; i< food.size(); i++){
+        for(int j = 0; j < food[i] / 2; j++){
+            answer += to_string(i);
+        }
+    }
+    
+    answer += "0";
+    
+    
+    for(int i = food.size() - 1; i > 0; i--){
+        for(int j = 0; j < food[i] / 2; j++){
+            answer += to_string(i);
+        }
+    }
+   
+    return answer;
+}
