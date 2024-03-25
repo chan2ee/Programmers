@@ -8,18 +8,14 @@ using namespace std;
 string solution(string s) {
     string answer = "";
     stringstream ss (s);
-    vector<string> v;
+    vector<int> v;
     string str = "";
     while(getline(ss, str, ' ')){
-        v.push_back(str);
+        v.push_back(stoi(str));
     }
-    vector<int> b;
-    for(int i = 0; i < v.size(); i++){
-        b.push_back(stoi(v[i]));
-    }
-    
-    int min_a = *min_element(b.begin(), b.end());
-    int max_a = *max_element(b.begin(), b.end());
+   
+    int min_a = *min_element(v.begin(), v.end());
+    int max_a = *max_element(v.begin(), v.end());
     
     answer += to_string(min_a);
     answer += ' ';
