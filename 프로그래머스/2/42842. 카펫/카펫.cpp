@@ -9,7 +9,7 @@ vector<int> solution(int brown, int yellow) {
     vector<int> v;
     int a, b;
     
-    for(int i = 1; i <= sum / i; i++){
+    for(int i = 1; i * i <= sum; i++){
         if(sum % i == 0){
             a = max(i, sum / i);
             b = min(i, sum / i);
