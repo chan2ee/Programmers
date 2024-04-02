@@ -11,7 +11,7 @@ int solution(vector<int> elements) {
     newarr.insert(newarr.end(), elements.begin(), elements.end());
     
     for(int i = 1; i <= elements.size(); i++){
-        for(int j = 0; j < newarr.size() - i + 1; j++){
+        for(int j = 0; j < elements.size(); j++){
             int sum = 0;
             for(int k = j; k < j + i; k++){
                 sum += newarr[k];
