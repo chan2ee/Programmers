@@ -26,36 +26,16 @@ vector<int> solution(vector<int> answers) {
         }
     }
     
-    if(one_count == two_count && two_count == three_count){
-            answer.push_back(1);
-            answer.push_back(2);
-            answer.push_back(3);
-    }
-    else{
-    if(max( {one_count, two_count, three_count} ) == one_count && one_count == two_count){
-        answer.push_back(1);
-        answer.push_back(2);
-    }
-    else if(max( {one_count, two_count, three_count} ) == one_count && one_count == three_count){
-        answer.push_back(1);
-        answer.push_back(3);
-    }
-    else if(max( {one_count, two_count, three_count} ) == one_count){
-        answer.push_back(1);
-    }
+    vector<int> v;
+    v.push_back(one_count);     v.push_back(two_count);     v.push_back(three_count);
     
-    else if(max( {one_count, two_count, three_count} ) == two_count && two_count == three_count){
-        answer.push_back(2);
-        answer.push_back(3);
-    }
-    else if(max( {one_count, two_count, three_count} ) == two_count){
-        answer.push_back(2);
-    }
-        else if(max( {one_count, two_count, three_count} ) == three_count){
-        answer.push_back(3);
-    }
-    }
+    int max = *max_element(v.begin(), v.end());
     
+    for(int i = 0; i < v.size(); i++){
+        if(v[i] == max){
+            answer.push_back(i + 1);
+        }
+    }
     
     return answer;
 }
