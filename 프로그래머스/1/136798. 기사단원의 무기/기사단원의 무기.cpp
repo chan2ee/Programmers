@@ -21,8 +21,7 @@ int solution(int number, int limit, int power) {
                 count++;
             }
             else if(num[i] % j == 0){
-                count++;
-                count++;
+                count += 2;
             }
         }
         
